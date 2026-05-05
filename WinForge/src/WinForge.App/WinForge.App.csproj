@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>WinForge</AssemblyName>
+    <RootNamespace>WinForge</RootNamespace>
+    <ApplicationIcon>Assets\WinForge.ico</ApplicationIcon>
+    <Version>1.0.0</Version>
+    <Authors>KyronixLabs</Authors>
+    <Company>KyronixLabs</Company>
+    <Product>WinForge</Product>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Assets\WinForge.ico" />
+    <None Remove="Assets\WinForgeIcon.png" />
+    <None Remove="Assets\WinForgeShortcut.ico" />
+    <Resource Include="Assets\WinForge.ico" />
+    <Resource Include="Assets\WinForgeIcon.png" />
+    <Content Include="Assets\WinForgeShortcut.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

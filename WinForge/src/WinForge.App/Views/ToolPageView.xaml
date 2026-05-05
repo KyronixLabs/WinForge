@@ -1,0 +1,26 @@
+<UserControl x:Class="WinForge.Views.ToolPageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="0,0,0,20">
+            <TextBlock x:Name="TitleText" Style="{StaticResource PageTitle}" />
+            <TextBlock x:Name="SubtitleText" Style="{StaticResource PageSubtitle}" />
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <WrapPanel x:Name="ActionsPanel" />
+        </ScrollViewer>
+
+        <Expander x:Name="OutputExpander" Grid.Row="2" Header="Action output" IsExpanded="False" Foreground="{StaticResource AccentBrush}" Margin="0,10,0,0">
+            <Border Style="{StaticResource Card}" Margin="0,8,0,0">
+                <TextBox x:Name="OutputBox" Background="#FF0D1322" Foreground="{StaticResource InkBrush}" BorderBrush="{StaticResource LineBrush}" BorderThickness="1" Padding="12" MinHeight="150" MaxHeight="230" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True" />
+            </Border>
+        </Expander>
+    </Grid>
+</UserControl>

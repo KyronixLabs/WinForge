@@ -1,0 +1,34 @@
+<UserControl x:Class="WinForge.Views.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="0,0,0,22">
+            <TextBlock Text="Dashboard" Style="{StaticResource PageTitle}" />
+            <TextBlock Text="A quick view of system readiness and optimisation status." Style="{StaticResource PageSubtitle}" />
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <WrapPanel x:Name="StatusPanel" />
+
+                <Border Style="{StaticResource Card}" Margin="0,0,0,16">
+                    <StackPanel>
+                        <TextBlock Text="Recommended flow" Foreground="{StaticResource AccentBrush}" FontSize="18" FontWeight="SemiBold" />
+                        <TextBlock Text="Choose a profile, review the selected changes, apply only what is needed and keep a restore snapshot available." Foreground="{StaticResource MutedBrush}" TextWrapping="Wrap" Margin="0,8,0,0" />
+                    </StackPanel>
+                </Border>
+
+                <Expander Header="System details" Foreground="{StaticResource AccentBrush}" IsExpanded="False">
+                    <Border Style="{StaticResource Card}" Margin="0,8,0,16">
+                        <TextBox x:Name="ReportBox" Background="#FF0D1322" Foreground="{StaticResource InkBrush}" BorderBrush="{StaticResource LineBrush}" BorderThickness="1" Padding="12" MinHeight="150" TextWrapping="Wrap" IsReadOnly="True" />
+                    </Border>
+                </Expander>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

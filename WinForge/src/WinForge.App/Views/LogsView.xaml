@@ -1,0 +1,25 @@
+<UserControl x:Class="WinForge.Views.LogsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="0,0,0,20">
+            <TextBlock Text="Logs" Style="{StaticResource PageTitle}" />
+            <TextBlock Text="Review WinForge output and recent optimisation activity." Style="{StaticResource PageSubtitle}" />
+        </StackPanel>
+
+        <Border Grid.Row="1" Style="{StaticResource Card}" Margin="0,0,0,18">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Refresh" Style="{StaticResource SecondaryButton}" Click="RefreshButton_Click" />
+                <Button Content="Open log folder" Style="{StaticResource SecondaryButton}" Click="OpenFolderButton_Click" />
+            </StackPanel>
+        </Border>
+
+        <TextBox Grid.Row="2" x:Name="LogsBox" Background="#FF0D1322" Foreground="{StaticResource InkBrush}" BorderBrush="{StaticResource LineBrush}" BorderThickness="1" Padding="14" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True" />
+    </Grid>
+</UserControl>
